@@ -1,0 +1,64 @@
+{
+  "name": "challenge-nanlabs",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "author": {
+    "name": "Juan Martin Di Martino",
+    "email": "juanmadm_88@hotmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "tags": [
+    "orm",
+    "typescript",
+    "node",
+    "express"
+  ],
+  "devDependencies": {
+    "@types/body-parser": "^1.16.8",
+    "@types/express": "^4.11.1",
+    "@types/jsonwebtoken": "^8.3.5",
+    "@types/node": "^14.0.14",
+    "body-parser": "^1.17.1",
+    "chai": "^4.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.16.3",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-nodemon": "^2.4.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-terser": "^1.2.0",
+    "gulp-typescript": "^5.0.1",
+    "jasmine": "^3.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "method-override": "^2.3.9",
+    "mocha": "^7.2.0",
+    "mssql": "^6.2.0",
+    "typescript": "^3.3.3333"
+  },
+  "dependencies": {
+    "@types/form-data": "^2.5.0",
+    "body-parser": "^1.17.1",
+    "chai": "^4.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.5.1",
+    "method-override": "^2.3.9",
+    "mocha": "^7.2.0",
+    "node-fetch": "^2.6.1",
+    "request": "^2.88.2",
+    "ts-mocha": "^7.0.0",
+    "typeorm": "^0.2.0"
+  },
+  "scripts": {
+    "start": "node dist/server.js",
+    "startdev": "node node_modules/gulp/bin/gulp.js start-dev",
+    "build": "node node_modules/gulp/bin/gulp.js prod",
+    "test": "node node_modules/ts-mocha/bin/ts-mocha --timeout 10000 ./spec/app.spec.js"
+  }
+}
