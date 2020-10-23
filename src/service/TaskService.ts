@@ -34,6 +34,7 @@ export class TaskService {
                 endpoint += `&name=${body.title}&idLabels=${this.buildLabels(body.category)}&idList=${Constants.ID_TASK_LIST}`;
                 break;
             default:
+                //TODO: what if type is not sent inside body or the string didn't match constant
                 break;
         }
         return endpoint;
@@ -53,6 +54,7 @@ export class TaskService {
                 labels.push(Constants.ID_LABEL_ORANGE);
                 break;
             default:
+                //TODO: what if category is not sent inside body or the string didn't match constant
                 break;
         }
         return labels;
