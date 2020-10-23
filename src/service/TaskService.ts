@@ -17,20 +17,21 @@ export class TaskService {
             method: Constants.HTTP_POST
         })
     }
-
+    
+    //Como el ejercicio no aclaraba los tasks los guardo en la lista de tareas y los bugs en la lista ToDo
     private buildEndpoint = (body: any): string => {
         let endpoint: string =`key=${Constants.KEY_API_TRELLO}&token=${Constants.TOKEN_TRELLO}`;
 
         switch (body.type) {
             case Constants.TYPE_ISSUE:
-                endpoint = `&name=${body.title}&desc=${body.description}&idList=${Constants.ID_TODO_LIST}`;
+                endpoint += `&name=${body.title}&desc=${body.description}&idList=${Constants.ID_TODO_LIST}`;
                 break;
             case Constants.TYPE_BUG:
                 let index:number = this.generateRandonNumber(0,this.membersId.length);
-                endpoint = `&name=${this.buildTitle(body.title)}&desc=${body.description}&idMembers=${this.membersId[index]}&idList=${Constants.ID_TODO_LIST}&idLabels=${Constants.ID_BUG_LABEL}`;
+                endpoint += `&name=${this.buildTitle()}&desc=${body.description}&idMembers=${this.membersId[index]}&idList=${Constants.ID_TODO_LIST}&idLabels=${Constants.ID_BUG_LABEL}`;
                 break;
             case  Constants.TYPE_TASK:
-                endpoint = `&name=${body.title}&idLabels=${this.buildLabels(body.category)}&idList=${Constants.ID_TASK_LIST}`;
+                endpoint += `&name=${body.title}&idLabels=${this.buildLabels(body.category)}&idList=${Constants.ID_TASK_LIST}`;
                 break;
             default:
                 break;
@@ -61,7 +62,7 @@ export class TaskService {
         return Math.floor(Math.random() * (max - min) ) + min;
     }
 
-    private buildTitle = (requestTitle:string): string =>{
+    private buildTitle = (): string =>{
         let title:string;
         let number:number = this.generateRandonNumber(0,50);
         let word:string = this.generateRandomString(5);
