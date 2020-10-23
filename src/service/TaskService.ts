@@ -18,7 +18,7 @@ export class TaskService {
         })
     }
     
-    //Como el ejercicio no aclaraba los tasks los guardo en la lista de tareas y los bugs en la lista ToDo
+    //The exercise didn't specify so task's are saved in tasks list and bugs are saved in toDo list
     private buildEndpoint = (body: any): string => {
         let endpoint: string =`key=${Constants.KEY_API_TRELLO}&token=${Constants.TOKEN_TRELLO}`;
 
